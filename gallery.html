@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oil & Gas Engineering & Inspection Gallery | Chardonic</title>
+  <meta name="description" content="Explore visual highlights from energy infrastructure, petroleum refineries, technical inspections, and engineering operations.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="responsive.css">
+</head>
+<body class="bg-cream">
+
+<!-- ========== SCROLL TO TOP ========== -->
+<button id="scrollTopBtn" aria-label="Scroll to top">
+  <span class="arrow-up"></span>
+</button>
+
+
+  <!-- Header -->
+  <header class="site-header" id="header">
+    <nav class="nav-container">
+      <a href="index.html" class="brand-logo">
+        <img src="chardonic-logo.webp" alt="Chardonic Oil & Gas Limited Logo" class="logo-img">
+      </a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link ">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="gallery.html" class="nav-link active">Gallery</a></li>
+        <li><button class="btn btn-primary open-modal-btn getnav" data-modal="contact">Contact</button></li>
+      </ul>
+      <div class="nav-actions">
+        <!--<a href="tel:+2348060179950" class="nav-phone"><i class="fa-solid fa-phone"></i> +234 806 017 9950</a>-->
+        <button class="btn btn-primary open-modal-btn getin" data-modal="contact">Get in Touch <i class="fa-solid fa-arrow-up-right"></i></button>
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Gallery Hero -->
+    <section class="page-hero-section bg-dark text-light">
+      <div class="container hero-inner text-center">
+        <span class="eyebrow-tag tag-lime">VISUAL EXPLORATION</span>
+        <h1 class="page-title">Inside the world of energy, engineering, and inspection.</h1>
+        <p class="page-subtitle">Explore visual references from the environments and technical disciplines relevant to Chardonic's work.</p>
+        <button class="btn btn-primary open-modal-btn" data-modal="contact">Talk to Chardonic</button>
+      </div>
+    </section>
+
+    <!-- Featured Visual -->
+    <section class="section-padding bg-cream pb-0">
+      <div class="container">
+        <div class="featured-media-card gsap-reveal-left">
+          <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1200&auto=format&fit=crop" alt="Petroleum Processing Plant" class="featured-img">
+          <div class="featured-overlay">
+            <span class="tag-lime eyebrow-tag">FEATURED INFRASTRUCTURE</span>
+            <h3>Petroleum Processing &amp; High-Pressure Pipeline Infrastructure</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Category Filter Controls -->
+    <section class="section-padding bg-cream">
+      <div class="container">
+        <div class="filter-btn-group text-center">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="oil-gas">Oil &amp; Gas</button>
+          <button class="filter-btn" data-filter="engineering">Engineering</button>
+          <button class="filter-btn" data-filter="inspection">Inspection</button>
+          <button class="filter-btn" data-filter="equipment">Equipment</button>
+          <button class="filter-btn" data-filter="infrastructure">Infrastructure</button>
+        </div>
+
+        <!-- Interactive Masonry Gallery -->
+        <div class="gallery-grid" id="galleryGrid">
+
+          <!-- Item 1 -->
+          <div class="gallery-item gsap-card" data-category="oil-gas">
+            <div class="gallery-card">
+              <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=800&auto=format&fit=crop" alt="Oil Refinery Tower" class="gallery-img">
+              <div class="gallery-caption">
+                <h4>Refinery Complex</h4>
+                <p>Oil &amp; Gas Infrastructure</p>
+                <button class="lightbox-trigger-btn" data-src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1200&auto=format&fit=crop" data-title="Refinery Complex" data-category="Oil & Gas"><i class="fa-solid fa-expand"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="gallery-item gsap-card" data-category="inspection">
+            <div class="gallery-card">
+              <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=800&auto=format&fit=crop" alt="Quality Inspection testing" class="gallery-img">
+              <div class="gallery-caption">
+                <h4>Ultrasonic Thickness Gauge</h4>
+                <p>Inspection &amp; NDT</p>
+                <button class="lightbox-trigger-btn" data-src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=1200&auto=format&fit=crop" data-title="Ultrasonic Thickness Gauge" data-category="Inspection"><i class="fa-solid fa-expand"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="gallery-item gsap-card" data-category="engineering">
+            <div class="gallery-card">
+              <img src="https://images.unsplash.com/photo-1541888946425-d0fbb186a5b7?q=80&w=800&auto=format&fit=crop" alt="Engineering Construction" class="gallery-img">
+              <div class="gallery-caption">
+                <h4>Mechanical Welding Supervision</h4>
+                <p>Engineering Disciplines</p>
+                <button class="lightbox-trigger-btn" data-src="https://images.unsplash.com/photo-1541888946425-d0fbb186a5b7?q=80&w=1200&auto=format&fit=crop" data-title="Mechanical Welding Supervision" data-category="Engineering"><i class="fa-solid fa-expand"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="gallery-item gsap-card" data-category="equipment">
+            <div class="gallery-card">
+              <img src="https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?q=80&w=800&auto=format&fit=crop" alt="Oilfield Drilling Hardware" class="gallery-img">
+              <div class="gallery-caption">
+                <h4>Oilfield Hardware &amp; Tool Supply</h4>
+                <p>Equipment</p>
+                <button class="lightbox-trigger-btn" data-src="https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?q=80&w=1200&auto=format&fit=crop" data-title="Oilfield Hardware & Tool Supply" data-category="Equipment"><i class="fa-solid fa-expand"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="gallery-item gsap-card" data-category="infrastructure">
+            <div class="gallery-card">
+              <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=800&auto=format&fit=crop" alt="Pipeline Field Network" class="gallery-img">
+              <div class="gallery-caption">
+                <h4>High-Pressure Pipeline Network</h4>
+                <p>Infrastructure</p>
+                <button class="lightbox-trigger-btn" data-src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=1200&auto=format&fit=crop" data-title="High-Pressure Pipeline Network" data-category="Infrastructure"><i class="fa-solid fa-expand"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 6 -->
+          <div class="gallery-item gsap-card" data-category="inspection">
+            <div class="gallery-card">
+              <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=800&auto=format&fit=crop" alt="Pressure Vessel Testing" class="gallery-img">
+              <div class="gallery-caption">
+                <h4>Pressure Vessel Hydro-Testing</h4>
+                <p>Statutory Inspection</p>
+                <button class="lightbox-trigger-btn" data-src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=1200&auto=format&fit=crop" data-title="Pressure Vessel Hydro-Testing" data-category="Statutory Inspection"><i class="fa-solid fa-expand"></i></button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Industry Perspective Section -->
+    <section class="section-padding bg-dark text-light">
+      <div class="container">
+        <div class="section-header text-center gsap-fade">
+          <span class="section-subtitle">PERSPECTIVES</span>
+          <h2 class="section-title text-light">The environments where precision matters</h2>
+        </div>
+        <div class="cards-grid-3">
+          <div class="card card-dark-secondary gsap-card">
+            <i class="fa-solid fa-industry card-icon-lg text-lime"></i>
+            <h3>Industrial Facilities</h3>
+            <p>Onshore production facilities, gas plants, and oil terminals operating under rigorous quality control standards.</p>
+          </div>
+          <div class="card card-dark-secondary gsap-card">
+            <i class="fa-solid fa-microscope card-icon-lg text-lime"></i>
+            <h3>Technical Inspection</h3>
+            <p>Field non-destructive testing, corrosion assessments, and pressure relief valve statutory certifications.</p>
+          </div>
+          <div class="card card-dark-secondary gsap-card">
+            <i class="fa-solid fa-network-wired card-icon-lg text-lime"></i>
+            <h3>Energy Infrastructure</h3>
+            <p>Cross-country pipelines, storage tank farms, and specialized oilfield distribution networks.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery CTA -->
+    <section class="section-padding bg-cream">
+      <div class="container">
+        <div class="cta-banner-card bg-dark text-light text-center gsap-fade">
+          <h2 class="cta-heading">Looking for technical support?</h2>
+          <p class="cta-sub">Reach out to our team for specialized QA/QC and engineering services in Nigeria.</p>
+          <button class="btn btn-primary open-modal-btn" data-modal="contact">Talk to Chardonic <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer bg-dark text-light">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand-logo light">
+          <span class="logo-text">CHARDONIC</span>
+          <span class="logo-sub">OIL &amp; GAS LTD</span>
+        </a>
+        <p class="footer-desc mt-3">Oil and gas services with emphasis on quality control, inspection, certification, and maintenance.</p>
+        <span class="footer-rc">RC Number: 1387782</span>
+      </div>
+      <div class="footer-links">
+        <h4 class="footer-head">Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4 class="footer-head">Contact Us</h4>
+        <p><i class="fa-solid fa-location-dot"></i> Suite 13, Emmanuel Plaza, 36 Alcon Road, Woji Town, Port Harcourt, Rivers State, Nigeria</p>
+        <p><i class="fa-solid fa-phone"></i> +234 806 017 9950</p>
+        <p><i class="fa-solid fa-envelope"></i> chardonicoilandgas@gmail.com</p>
+      </div>
+    </div>
+    <div class="container footer-bottom text-center">
+     <p>&copy; 2026 Chardonic Oil &amp; Gas Limited. All Rights Reserved. Website Developed by <a href="https://sievoratech.com/" style="color: #fc5910;">Sievora</a></p>
+    </div>
+  </footer>
+
+  <!-- Lightbox Popup Modal -->
+  <div class="lightbox-modal" id="lightboxModal" aria-hidden="true">
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightboxCloseBtn">&times;</button>
+      <img src="" alt="" id="lightboxImg" class="lightbox-img">
+      <div class="lightbox-caption-bar">
+        <h4 id="lightboxTitle"></h4>
+        <span id="lightboxCategory" class="badge-tag"></span>
+      </div>
+      <button class="lightbox-prev" id="lightboxPrevBtn"><i class="fa-solid fa-chevron-left"></i></button>
+      <button class="lightbox-next" id="lightboxNextBtn"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+  </div>
+
+  <!-- Contact Modal -->
+  <div class="modal-overlay" id="contactModal" aria-hidden="true">
+    <div class="modal-container" role="dialog" aria-labelledby="modalTitle">
+      <button class="modal-close-btn" id="closeModalBtn" aria-label="Close dialog">&times;</button>
+      <div class="modal-body-grid">
+        <div class="modal-info-side">
+          <span class="eyebrow-tag tag-lime">CONTACT CHARDONIC</span>
+          <h3 id="modalTitle" class="modal-title">Let's talk about your next operation.</h3>
+          <p class="modal-desc">Have a project or technical requirement? Reach out to the Chardonic team.</p>
+          <div class="modal-contact-details">
+            <p><i class="fa-solid fa-phone"></i> <strong>Phone:</strong> +234 806 017 9950</p>
+            <p><i class="fa-solid fa-envelope"></i> <strong>Email:</strong> chardonicoilandgas@gmail.com</p>
+            <p><i class="fa-solid fa-location-dot"></i> <strong>Office:</strong> Suite 13, Emmanuel Plaza, 36 Alcon Road, Woji Town, Port Harcourt, Rivers State, Nigeria</p>
+          </div>
+        </div>
+        <div class="modal-form-side">
+          <form id="globalContactForm" class="contact-form">
+            <div class="form-group">
+              <label for="fullName">Full Name</label>
+              <input type="text" id="fullName" name="fullName" class="form-input" placeholder="e.g. John Doe" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" class="form-input" placeholder="name@company.com" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" class="form-input" placeholder="+234..." required>
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" class="form-input" placeholder="Gallery inquiry" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" class="form-input" rows="4" placeholder="How can we assist you?" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">Send Message <i class="fa-solid fa-paper-plane"></i></button>
+            <div class="form-feedback" id="formFeedback"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
