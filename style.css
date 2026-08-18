@@ -158,7 +158,8 @@ h1, h2, h3, h4, .font-heading {
 }
 
 .section-padding {
-  padding: 100px 0;
+  padding-bottom: 100px ;
+  padding-top: 50px;
 }
 
 .eyebrow-tag {
@@ -342,7 +343,22 @@ h1, h2, h3, h4, .font-heading {
   width: 24px;
   height: 2px;
   background-color: var(--color-dark);
-  transition: var(--transition-fast);
+  border-radius: 2px;
+  transform-origin: center;
+  transition: transform 0.3s ease, opacity 0.2s ease;
+}
+
+.hamburger-btn.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger-btn.active span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.hamburger-btn.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 /* Hero Section (Asymmetrical Split - Spaciaz Style) */
@@ -1136,7 +1152,7 @@ h1, h2, h3, h4, .font-heading {
   max-width: 900px;
   width: 100%;
   position: relative;
-  overflow: hidden;
+  overflow: auto;
   box-shadow: var(--shadow-lg);
 }
 
@@ -1218,6 +1234,36 @@ h1, h2, h3, h4, .font-heading {
   font-weight: 600;
   text-align: center;
 }
+
+/* Contact Page */
+.contact-hero { padding-bottom: 0px; }
+.contact-page-grid { display: grid; grid-template-columns: 0.9fr 1.25fr; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-subtle); background: var(--color-white); }
+.contact-details-panel { padding: 56px 48px; }
+.contact-details-panel h2 { font-size: 2rem; margin-bottom: 1rem; }
+.contact-details-panel > p { color: var(--color-gray-light); margin-bottom: 2.5rem; }
+.contact-detail-list { display: grid; gap: 22px; }
+.contact-detail-list a { display: flex; align-items: flex-start; gap: 14px; color: var(--color-gray-light); font-size: 0.88rem; }
+.contact-detail-list a:hover { color: var(--color-accent-lime); }
+.contact-detail-list i { color: var(--color-accent-lime); font-size: 1.05rem; margin-top: 4px; }
+.contact-detail-list strong { color: var(--color-white); display: block; font-size: 0.78rem; letter-spacing: 0.05em; margin-bottom: 3px; text-transform: uppercase; }
+.contact-form-panel { padding: 56px 48px; }
+.contact-form-intro { color: var(--color-gray); margin: -0.5rem 0 2rem; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.contact-form textarea { resize: vertical; min-height: 130px; }
+.form-note { color: var(--color-gray); font-size: 0.75rem; margin-top: 14px; }
+.contact-form button:disabled { cursor: wait; opacity: 0.75; }
+.contact-map-section { padding-top: 80px; }
+.map-frame { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-subtle); min-height: 440px; }
+.map-frame iframe { border: 0; display: block; height: 440px; width: 100%; }
+
+.submit-popup { align-items: center; background: rgba(17, 19, 12, 0.7); display: flex; inset: 0; justify-content: center; opacity: 0; padding: 20px; pointer-events: none; position: fixed; transition: opacity 0.25s ease; z-index: 3000; }
+.submit-popup.active { opacity: 1; pointer-events: auto; }
+.submit-popup-card { background: var(--color-white); border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); max-width: 460px; padding: 48px 36px 36px; position: relative; text-align: center; transform: translateY(16px) scale(0.96); transition: transform 0.25s ease; width: 100%; }
+.submit-popup.active .submit-popup-card { transform: translateY(0) scale(1); }
+.submit-popup-icon { align-items: center; background: var(--color-accent-lime); border-radius: 50%; color: var(--color-white); display: inline-flex; font-size: 1.2rem; height: 52px; justify-content: center; margin-bottom: 16px; width: 52px; }
+.submit-popup-card h2 { font-size: 1.75rem; margin-bottom: 10px; }
+.submit-popup-card p { color: var(--color-gray); font-size: 0.9rem; margin-bottom: 24px; }
+.submit-popup-close { background: transparent; border: 0; color: var(--color-dark); cursor: pointer; font-size: 1.8rem; line-height: 1; position: absolute; right: 18px; top: 14px; }
 
 /* Footer */
 .site-footer {

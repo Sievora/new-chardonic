@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     hamburgerBtn.addEventListener('click', () => {
       navMenu.classList.toggle('active');
       const isExpanded = navMenu.classList.contains('active');
+      hamburgerBtn.classList.toggle('active', isExpanded);
       hamburgerBtn.setAttribute('aria-expanded', isExpanded);
     });
 
@@ -20,65 +21,68 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.nav-link').forEach(link => {
       link.addEventListener('click', () => {
         navMenu.classList.remove('active');
+        hamburgerBtn.classList.remove('active');
+        hamburgerBtn.setAttribute('aria-expanded', 'false');
       });
     });
   }
 
-  // 2. Global Contact Modal Logic
-  const contactModal = document.getElementById('contactModal');
-  const openModalBtns = document.querySelectorAll('.open-modal-btn');
-  const closeModalBtn = document.getElementById('closeModalBtn');
+  // 2. Send FormSubmit forms without navigating away from the page.
+  const submitPopup = document.getElementById('submitPopup');
+  const submitPopupClose = document.getElementById('submitPopupClose');
+  const submitPopupDone = document.getElementById('submitPopupDone');
 
-  function openModal() {
-    if (contactModal) {
-      contactModal.classList.add('active');
-      contactModal.setAttribute('aria-hidden', 'false');
-      document.body.classList.add('modal-open');
-    }
-  }
+  const closeSubmitPopup = () => {
+    if (!submitPopup) return;
+    submitPopup.classList.remove('active');
+    submitPopup.setAttribute('aria-hidden', 'true');
+  };
 
-  function closeModal() {
-    if (contactModal) {
-      contactModal.classList.remove('active');
-      contactModal.setAttribute('aria-hidden', 'true');
-      document.body.classList.remove('modal-open');
-    }
-  }
+  document.querySelectorAll('form.contact-form').forEach(form => {
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const submitButton = form.querySelector('[type="submit"]');
+      const originalLabel = submitButton.innerHTML;
 
-  openModalBtns.forEach(btn => btn.addEventListener('click', openModal));
-  if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+      submitButton.disabled = true;
+      submitButton.innerHTML = 'Sending...';
 
-  if (contactModal) {
-    contactModal.addEventListener('click', (e) => {
-      if (e.target === contactModal) closeModal();
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(Object.fromEntries(new FormData(form)))
+        });
+
+        if (!response.ok) throw new Error('Form submission failed');
+        form.reset();
+        if (submitPopup) {
+          submitPopup.classList.add('active');
+          submitPopup.setAttribute('aria-hidden', 'false');
+          submitPopupClose.focus();
+        }
+      } catch (error) {
+        window.alert('We could not submit your message. Please try again or email chardonicoilandgas@gmail.com.');
+      } finally {
+        submitButton.disabled = false;
+        submitButton.innerHTML = originalLabel;
+      }
     });
-  }
+  });
 
-  // Keyboard accessibility (ESC to close modal / lightbox)
+  if (submitPopupClose) submitPopupClose.addEventListener('click', closeSubmitPopup);
+  if (submitPopupDone) submitPopupDone.addEventListener('click', closeSubmitPopup);
+  if (submitPopup) submitPopup.addEventListener('click', event => {
+    if (event.target === submitPopup) closeSubmitPopup();
+  });
+
+  // 3. Keyboard accessibility for popups and the gallery lightbox
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-      closeModal();
+      closeSubmitPopup();
       closeLightbox();
     }
   });
-
-  // 3. Form Validation & Simulation
-  const globalContactForm = document.getElementById('globalContactForm');
-  const formFeedback = document.getElementById('formFeedback');
-
-  if (globalContactForm) {
-    globalContactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      formFeedback.style.color = '#11130C';
-      formFeedback.textContent = 'Sending message...';
-
-      setTimeout(() => {
-        formFeedback.style.color = '#8a9402';
-        formFeedback.textContent = 'Thank you! Your message has been received by Chardonic Oil & Gas.';
-        globalContactForm.reset();
-      }, 1200);
-    });
-  }
 
   // 4. FAQ Accordions
   const faqItems = document.querySelectorAll('.faq-item');
@@ -92,12 +96,17 @@ document.addEventListener('DOMContentLoaded', () => {
         // Close all accordion items in current parent
         const parentAccordion = item.closest('.faq-accordion');
         if (parentAccordion) {
-          parentAccordion.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+          parentAccordion.querySelectorAll('.faq-item').forEach(i => {
+            i.classList.remove('active');
+            const button = i.querySelector('.faq-question');
+            if (button) button.setAttribute('aria-expanded', 'false');
+          });
         }
 
         if (!isActive) {
           item.classList.add('active');
         }
+        questionBtn.setAttribute('aria-expanded', String(!isActive));
       });
     }
   });

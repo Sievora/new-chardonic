@@ -31,11 +31,11 @@
         <li><a href="about.html" class="nav-link">About</a></li>
         <li><a href="services.html" class="nav-link">Services</a></li>
         <li><a href="gallery.html" class="nav-link active">Gallery</a></li>
-        <li><button class="btn btn-primary open-modal-btn getnav" data-modal="contact">Contact</button></li>
+        <li><a href="contact.html" class="btn btn-primary getnav">Contact</a></li>
       </ul>
       <div class="nav-actions">
         <!--<a href="tel:+2348060179950" class="nav-phone"><i class="fa-solid fa-phone"></i> +234 806 017 9950</a>-->
-        <button class="btn btn-primary open-modal-btn getin" data-modal="contact">Get in Touch <i class="fa-solid fa-arrow-up-right"></i></button>
+        <a href="contact.html" class="btn btn-primary getin">Get in Touch <i class="fa-solid fa-arrow-up-right"></i></a>
         <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation">
           <span></span><span></span><span></span>
         </button>
@@ -50,7 +50,7 @@
         <span class="eyebrow-tag tag-lime">VISUAL EXPLORATION</span>
         <h1 class="page-title">Inside the world of energy, engineering, and inspection.</h1>
         <p class="page-subtitle">Explore visual references from the environments and technical disciplines relevant to Chardonic's work.</p>
-        <button class="btn btn-primary open-modal-btn" data-modal="contact">Talk to Chardonic</button>
+        <a href="contact.html" class="btn btn-primary">Talk to Chardonic</a>
       </div>
     </section>
 
@@ -163,7 +163,7 @@
       <div class="container">
         <div class="section-header text-center gsap-fade">
           <span class="section-subtitle">PERSPECTIVES</span>
-          <h2 class="section-title text-light">The environments where precision matters</h2>
+          <h2 class="section-title text-light" style="color: #fff;">The environments where precision matters</h2>
         </div>
         <div class="cards-grid-3">
           <div class="card card-dark-secondary gsap-card">
@@ -191,7 +191,7 @@
         <div class="cta-banner-card bg-dark text-light text-center gsap-fade">
           <h2 class="cta-heading">Looking for technical support?</h2>
           <p class="cta-sub">Reach out to our team for specialized QA/QC and engineering services in Nigeria.</p>
-          <button class="btn btn-primary open-modal-btn" data-modal="contact">Talk to Chardonic <i class="fa-solid fa-arrow-right"></i></button>
+          <a href="contact.html" class="btn btn-primary">Talk to Chardonic <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
     </section>
@@ -215,6 +215,7 @@
           <li><a href="about.html">About Us</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
       <div class="footer-contact">
@@ -240,51 +241,6 @@
       </div>
       <button class="lightbox-prev" id="lightboxPrevBtn"><i class="fa-solid fa-chevron-left"></i></button>
       <button class="lightbox-next" id="lightboxNextBtn"><i class="fa-solid fa-chevron-right"></i></button>
-    </div>
-  </div>
-
-  <!-- Contact Modal -->
-  <div class="modal-overlay" id="contactModal" aria-hidden="true">
-    <div class="modal-container" role="dialog" aria-labelledby="modalTitle">
-      <button class="modal-close-btn" id="closeModalBtn" aria-label="Close dialog">&times;</button>
-      <div class="modal-body-grid">
-        <div class="modal-info-side">
-          <span class="eyebrow-tag tag-lime">CONTACT CHARDONIC</span>
-          <h3 id="modalTitle" class="modal-title">Let's talk about your next operation.</h3>
-          <p class="modal-desc">Have a project or technical requirement? Reach out to the Chardonic team.</p>
-          <div class="modal-contact-details">
-            <p><i class="fa-solid fa-phone"></i> <strong>Phone:</strong> +234 806 017 9950</p>
-            <p><i class="fa-solid fa-envelope"></i> <strong>Email:</strong> chardonicoilandgas@gmail.com</p>
-            <p><i class="fa-solid fa-location-dot"></i> <strong>Office:</strong> Suite 13, Emmanuel Plaza, 36 Alcon Road, Woji Town, Port Harcourt, Rivers State, Nigeria</p>
-          </div>
-        </div>
-        <div class="modal-form-side">
-          <form id="globalContactForm" class="contact-form">
-            <div class="form-group">
-              <label for="fullName">Full Name</label>
-              <input type="text" id="fullName" name="fullName" class="form-input" placeholder="e.g. John Doe" required>
-            </div>
-            <div class="form-group">
-              <label for="email">Email Address</label>
-              <input type="email" id="email" name="email" class="form-input" placeholder="name@company.com" required>
-            </div>
-            <div class="form-group">
-              <label for="phone">Phone Number</label>
-              <input type="tel" id="phone" name="phone" class="form-input" placeholder="+234..." required>
-            </div>
-            <div class="form-group">
-              <label for="subject">Subject</label>
-              <input type="text" id="subject" name="subject" class="form-input" placeholder="Gallery inquiry" required>
-            </div>
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" class="form-input" rows="4" placeholder="How can we assist you?" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary btn-full">Send Message <i class="fa-solid fa-paper-plane"></i></button>
-            <div class="form-feedback" id="formFeedback"></div>
-          </form>
-        </div>
-      </div>
     </div>
   </div>
 
