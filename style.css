@@ -24,7 +24,7 @@
   --radius-sm: 8px;
   --radius-md: 16px;
   --radius-lg: 28px;
-  --radius-pill: 28px;
+  --radius-pill: 20px;
   
   --transition-fast: 0.25s ease;
   --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -342,7 +342,7 @@ h1, h2, h3, h4, .font-heading {
 .hamburger-btn span {
   width: 24px;
   height: 2px;
-  background-color: var(--color-dark);
+  background-color: var(--color-accent-lime);
   border-radius: 2px;
   transform-origin: center;
   transition: transform 0.3s ease, opacity 0.2s ease;
@@ -363,7 +363,7 @@ h1, h2, h3, h4, .font-heading {
 
 /* Hero Section (Asymmetrical Split - Spaciaz Style) */
 .hero-section {
-  padding-top: 100px;
+  padding-top: 110px;
   padding-bottom: 60px;
 }
 
